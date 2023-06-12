@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Button from './components/ui/Button/Button'
 function App() {
+  const [counter, setcounter] = useState(0)
+  console.log('rendu')
   return (
     <div className="App">
-      <Button className="primary" onClick={(unParamDeLenfant)=>{
-        console.log('fonction envoyee part la parent',unParamDeLenfant)
-      }}  ><img src='/img/ok_sub.png'  alt=''/> ok</Button>
-      <Button className="error" >cancel</Button>
+      voici la valeur de counter : {counter}
+      <hr />
+      <Button className="error" onClick={() => {
+        setcounter(counter - 1)
+        console.log(counter)
+      }}>-1</Button>
+      <Button onClick={() => {
+        setcounter(counter + 1)
+        console.log(counter)
+      }}>+1</Button>
     </div>
   );
 }
