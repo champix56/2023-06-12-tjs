@@ -4,8 +4,10 @@ import Button from './components/ui/Button/Button'
 function App() {
   return (
     <div className="App">
-      <Button ><img src='/img/ok_sub.png'/> ok</Button>
-      <Button text="cancel"/>
+      <Button onClick={(unParamDeLenfant)=>{
+        console.log('fonction envoyee part la parent',unParamDeLenfant)
+      }}  ><img src='/img/ok_sub.png'  alt=''/> ok</Button>
+      <Button >cancel</Button>
     </div>
   );
 }
