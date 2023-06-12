@@ -4,8 +4,8 @@ import Button from './components/ui/Button/Button'
 function App() {
   return (
     <div className="App">
-      <Button></Button>
-      <Button></Button>
+      <Button ><img src='/img/ok_sub.png'/> ok</Button>
+      <Button text="cancel"/>
     </div>
   );
 }
