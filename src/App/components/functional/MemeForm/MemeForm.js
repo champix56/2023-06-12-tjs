@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import style from './MemeForm.module.css';
 import { emptyMeme } from 'orsys-tjs-meme'
+import Button from '../../ui/Button/Button';
 export const initialStateMemeForm = emptyMeme
 const MemeForm = (props) => {
   const [state, setstate] = useState(initialStateMemeForm)
@@ -13,9 +14,18 @@ const MemeForm = (props) => {
       console.log(`composant MemeForm demonté`);
     };
   }, [])
+  useEffect(() => {
+     setstate(props.current)
+  }, [props])
   return (
     <div className={style.MemeForm} data-testid="MemeForm">
-      <form><label htmlFor="titre">
+      <form onSubmit={(evt)=>{
+        evt.preventDefault();
+        props.onMemeChange(state);
+      }} onReset={(evt)=>{
+        props.onMemeChange(emptyMeme);
+      }}>
+        <label htmlFor="titre">
         <h1>Titre</h1></label>
         <br />
         <input name="titre" id="titre"
@@ -111,6 +121,8 @@ const MemeForm = (props) => {
           }}
         />
         <hr />
+        <Button type='reset' className='error'>Annul</Button>
+        <Button type='submit' className="primary">Annul</Button>
         <br />
       </form>
     </div >
@@ -118,7 +130,20 @@ const MemeForm = (props) => {
 };
 
 MemeForm.propTypes = {
-  images: PropTypes.array.isRequired
+  images: PropTypes.array.isRequired,
+  onMemeChange: PropTypes.func.isRequired,
+  current: PropTypes.shape({
+    id: PropTypes.number,
+    titre: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired,
+    fontWeight: PropTypes.string.isRequired,
+    fontSize: PropTypes.number.isRequired,
+    color: PropTypes.string.isRequired,
+    underline: PropTypes.bool.isRequired,
+    italic: PropTypes.bool.isRequired,
+  }).isRequired
 };
 
 MemeForm.defaultProps = {};
