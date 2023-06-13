@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import style from './MemeThumbnail.module.css'
 const MemeThumbnail = (props) => {
   return (
-    <div style={style.MemeThumbnail} data-testid="MemeThumbnail">
+    <div className={style.MemeThumbnail} data-testid="MemeThumbnail">
       {props.children}
     </div>
   )
