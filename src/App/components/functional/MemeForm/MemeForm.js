@@ -30,9 +30,11 @@ const MemeForm = (props) => {
         <br />
         <select name="image" id="image" value={state.imageId}
           onChange={(evt) => {
-            setstate({ ...state, imageId:Number(evt.target.value) })
+            setstate({ ...state, imageId: Number(evt.target.value) })
           }}>
           <option value="-1">No image</option>
+          {props.images.map((e, i) => <option key={`select-image-${i}`} value={e.id}>{e.titre}</option>
+          )}
         </select>
         <hr />
         <label htmlFor="text">
@@ -89,9 +91,9 @@ const MemeForm = (props) => {
         <br />
         <input name="underline" id="underline" type="checkbox"
           checked={state.underline}
-          onChange={(evt) => { 
-            setstate({ ...state, underline: evt.target.checked }) 
-        }} />
+          onChange={(evt) => {
+            setstate({ ...state, underline: evt.target.checked })
+          }} />
         &nbsp;
         <label htmlFor="underline">
           <h2 >underline</h2>
@@ -104,18 +106,20 @@ const MemeForm = (props) => {
         &nbsp;
         <input name="italic" id="italic" type="checkbox"
           checked={state.italic}
-          onChange={(evt) => { 
-            setstate({ ...state, italic: evt.target.checked }) 
-        }}
+          onChange={(evt) => {
+            setstate({ ...state, italic: evt.target.checked })
+          }}
         />
         <hr />
         <br />
       </form>
-    </div>
+    </div >
   );
 };
 
-MemeForm.propTypes = {};
+MemeForm.propTypes = {
+  images: PropTypes.array.isRequired
+};
 
 MemeForm.defaultProps = {};
 

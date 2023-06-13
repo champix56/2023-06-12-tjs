@@ -6,7 +6,9 @@ import FlexH1Grow from './components/layout/FlexH1Grow/FlexH1Grow'
 import Footer from './components/ui/Footer/Footer'
 import {MemeSVGViewer, emptyMeme} from 'orsys-tjs-meme'
 import MemeForm from './components/functional/MemeForm/MemeForm'
+import datas from './db.json'
 const App = () => {
+  console.log(datas );
   return (
     <div className="App">
       <FlexV3Grow>
@@ -14,7 +16,7 @@ const App = () => {
         <NavBar />
         <FlexH1Grow>
           <MemeSVGViewer meme={emptyMeme} image={undefined} basePath=''/>
-          <MemeForm/>
+          <MemeForm images={datas.images}/>
         </FlexH1Grow>
         <Footer />
       </FlexV3Grow>
