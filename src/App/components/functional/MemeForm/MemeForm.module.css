@@ -1,4 +1,9 @@
-.MemeForm {}
+.MemeForm {
+    text-align: center;
+}
 .smallNumber{
-    width : 200px;
+    width : 50px;
+}
+.MemeForm h2{
+    display: inline;
 }
