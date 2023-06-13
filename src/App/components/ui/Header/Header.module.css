@@ -1,1 +1,12 @@
-.Header {}
+.Header {
+    font-size: 32pt;
+    color: skyblue;
+    font-weight: 900;
+}
+.dot{
+    color:black
+}
+.js{
+    font-style: italic;
+    color: tomato;
+}
