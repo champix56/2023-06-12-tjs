@@ -22,7 +22,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "gen_ui":"npx generate-react-cli c --type=uiFunc",
+    "gen_layout":"npx generate-react-cli c --type=layoutFunc",
+    "gen_generic":"npx generate-react-cli c --type=genericHookedFunc"
   },
   "eslintConfig": {
     "extends": [
