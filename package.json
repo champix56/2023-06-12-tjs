@@ -10,6 +10,7 @@
     "@types/node": "^16.18.35",
     "@types/react": "^18.2.11",
     "@types/react-dom": "^18.2.4",
+    "orsys-tjs-meme": "^1.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -23,9 +24,9 @@
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "gen_ui":"npx generate-react-cli c --type=uiFunc",
-    "gen_layout":"npx generate-react-cli c --type=layoutFunc",
-    "gen_generic":"npx generate-react-cli c --type=genericHookedFunc"
+    "gen_ui": "npx generate-react-cli c --type=uiFunc",
+    "gen_layout": "npx generate-react-cli c --type=layoutFunc",
+    "gen_generic": "npx generate-react-cli c --type=genericHookedFunc"
   },
   "eslintConfig": {
     "extends": [
