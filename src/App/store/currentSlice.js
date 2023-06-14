@@ -9,7 +9,7 @@ const currentSlice = createSlice({
         update: (state, action) => {
             Object.assign(state, action.payload)
         },
-        clear: (state, action) => { 
+        clear: (state) => { 
             Object.assign(state, emptyMeme) 
         }
     }
