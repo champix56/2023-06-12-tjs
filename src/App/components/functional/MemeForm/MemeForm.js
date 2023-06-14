@@ -3,17 +3,18 @@ import PropTypes from 'prop-types';
 import style from './MemeForm.module.css';
 import { emptyMeme } from 'orsys-tjs-meme'
 import Button from '../../ui/Button/Button';
+import { connect } from 'react-redux';
 const MemeForm = (props) => {
   return (
     <div className={style.MemeForm} data-testid="MemeForm">
-      <form onSubmit={(evt)=>{
+      <form onSubmit={(evt) => {
         evt.preventDefault();
         //props.onMemeChange(state);
-      }} onReset={(evt)=>{
+      }} onReset={(evt) => {
         props.onMemeChange(emptyMeme);
       }}>
         <label htmlFor="titre">
-        <h1>Titre</h1></label>
+          <h1>Titre</h1></label>
         <br />
         <input name="titre" id="titre"
           value={props.currenttitre}
@@ -136,3 +137,25 @@ MemeForm.propTypes = {
 MemeForm.defaultProps = {};
 
 export default MemeForm;
+/*
+export const ConnectedMemeForm = (props) => {
+  const currentMeme = useSelector(s => s)
+  const storeDispatch = useDispatch();
+  return (
+    <MemeForm {...props} current={currentMeme} onMemeChange={(meme) => {
+      storeDispatch({ type: 'current/update', payload: meme })
+    }} />
+  )
+}
+*/
+/*
+function mapStateToProps(storeState,ownProps){
+    return {...props,current:storeState} 
+}
+function mapDispatchToProps(storeDispatch){
+  return {onMemeChange:(meme)=>{
+    storeDispatch({type:'current/update', payload:meme})
+  }}
+}
+export const ConnectedMemeForm=connect(mapStateToProps,mapDispatchToProps)(MemeForm)
+*/
