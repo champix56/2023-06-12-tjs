@@ -1,6 +1,6 @@
 import {configureStore,combineReducers} from '@reduxjs/toolkit'
 import currentReducer from './currentSlice'
-import ressourcesReducer from './ressourcesSlice'
+import ressourcesReducer, { fetchAllRessources } from './ressourcesSlice'
 const store=configureStore({
     reducer:combineReducers({
         ressources:ressourcesReducer,
@@ -8,10 +8,5 @@ const store=configureStore({
     }),
     devTools:true
 })
-// store.subscribe(()=>{
-//     console.trace(store.getState())
-// })
-// store.dispatch({type:'toto'})
-// store.dispatch({type:'current/update', payload:{titre:'coucou'}})
-// store.dispatch({type:'current/clear'})
+store.dispatch(fetchAllRessources())
 export default store
